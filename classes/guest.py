@@ -4,3 +4,11 @@ class Guest:
         self.age = age
         self.fav_song = fav_song
         self.wallet = wallet
+
+
+    # check for sufficient funds
+    def sufficient_funds(self, cost):
+        return self.wallet >= cost.fee
+
+    # cust wallet is greater than room fee
+
