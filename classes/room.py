@@ -40,14 +40,13 @@ class Room:
     def remove_guest(self, guest2):
         self.guest_list.remove(guest2)
 
-# method to check if fav_song is on list
+# method to check if fav_song is on list and to add if not
     def find_song(self, song_title):
         for song_2 in self.song_list:
             if song_2["title"] == self.favourite_song:
-                self.add_song
                 return "Woohoo!!"
             else:
-                return "Boooo"
+                self.add_song(song_title)
            
 
 #  method to check in guest:
