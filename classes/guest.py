@@ -6,9 +6,12 @@ class Guest:
         self.wallet = wallet
 
 
-    # check for sufficient funds
+    # # check for sufficient funds
     def sufficient_funds(self, cost):
         return self.wallet >= cost.fee
 
-    # cust wallet is greater than room fee
+    # # check fav_song
+
+    def favourite_song(self, song_name):
+        return self.fav_song(song_name)
 

@@ -6,31 +6,64 @@ class Room:
         self.guest_list = []
         self.song_list = []
         
+# # method to check song_count in room
 
-# fucntion to check song_count in room
     def song_count(self):
         return len(self.song_list)
     
-# function to add songs to list 
+# method to check fav song
+    def favourite_song(self, song_name):
+        return self.fav_song(song_name)
+
+# # method to add songs to list 
+
     def add_song(self, song_1):
         self.song_list.append(song_1)
 
-# check room capacity
+# # method to check room capacity
+
     def current_capacity(self):
         return len(self.guest_list)
 
-# add guest
+# # method to check for funds
+
+    def sufficient_funds(self, cost):
+        return self.wallet >= cost.fee
+
+# # method to add guest
+
     def add_guest(self, guest1):
         self.guest_list.append(guest1) 
 
-# remove guest
+# # method to remove guest
+
     def remove_guest(self, guest2):
-        self.guest_list.pop(guest2)
+        self.guest_list.remove(guest2)
 
-# function to check if fav_song is on list
+# method to check if fav_song is on list
+    def find_song(self, fave):
+        for song_2 in self.song_list(fave):
+            if song_2["title"] == self.guest.favourite_song.title:
+                self.add_song
+                return "Woohoo!!"
+            else:
+                return "Boooo"
+           
 
-# check in guest
-#  if they have sufficient funds
-    
-#  and if their fav_song is in room
-# if room capacity is not reached
+#  method to check in guest:
+#  if they have sufficient funds  
+#  and if room capacity is not reached
+
+    def check_in(self, guest_name):
+        entry_guaranteed = self.current_capacity
+
+        if entry_guaranteed and self.sufficient_funds:
+            self.add_guest(guest_name.name)
+        else:
+            return "Sorry, no admittance"
+        
+            
+
+
+
+

@@ -8,7 +8,7 @@ class TestGuest(unittest.TestCase):
     def setUp(self):
         self.guest1 = Guest("Stevie", 39, "The Chain", 10)
         self.guest2 = Guest("Luke", 45, "The Rocky Road to Dublin", 150)
-        self.guest3 = Guest("Marianne", 31, "Wuthering Heights", 20)
+        self.guest3 = Guest("Cathy", 31, "Wuthering Heights", 20)
         
         # self.room1 = Room("Osaka", 5, 20)
         self.room = Room("Tokyo", 3, 20)
@@ -27,3 +27,5 @@ class TestGuest(unittest.TestCase):
     def test_sufficient_funds__false_if_not(self):
         poor_guest = Guest("Stevie", 39, "The Chain", 10)
         self.assertEqual(False, poor_guest.sufficient_funds(self.room))
+
+    

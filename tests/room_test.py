@@ -15,7 +15,7 @@ class TestRoom(unittest.TestCase):
 
         self.guest1 = Guest("Stevie", 39, "The Chain", 100)
         self.guest2 = Guest("Luke", 45, "The Rocky Road to Dublin", 150)
-        self.guest3 = Guest("Marianne", 31, "Wuthering Heights", 200)
+        self.guest3 = Guest("Cathy", 31, "Wuthering Heights", 200)
 
 
     def test_room_name(self):
@@ -41,3 +41,15 @@ class TestRoom(unittest.TestCase):
     def test_add_guest(self):
         self.room.add_guest(self.guest1)
         self.assertEqual(1, self.room.current_capacity())
+
+    def test_find_song(self):
+        song = "The Chain"
+        self.assertEqual(song, self.song1.title)
+    
+    def test_check_in(self):
+        self.room.check_in(self.guest1)
+        self.assertEqual(["Stevie"], self.room.guest_list)
+        
+        
+
+
