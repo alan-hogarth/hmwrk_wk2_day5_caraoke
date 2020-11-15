@@ -41,9 +41,9 @@ class Room:
         self.guest_list.remove(guest2)
 
 # method to check if fav_song is on list
-    def find_song(self, fave):
-        for song_2 in self.song_list(fave):
-            if song_2["title"] == self.guest.favourite_song.title:
+    def find_song(self):
+        for song_2 in self.song_list:
+            if song_2["title"] == self.favourite_song:
                 self.add_song
                 return "Woohoo!!"
             else:
