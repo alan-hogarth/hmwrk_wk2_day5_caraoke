@@ -41,7 +41,7 @@ class Room:
         self.guest_list.remove(guest2)
 
 # method to check if fav_song is on list
-    def find_song(self):
+    def find_song(self, song_title):
         for song_2 in self.song_list:
             if song_2["title"] == self.favourite_song:
                 self.add_song
@@ -55,9 +55,10 @@ class Room:
 #  and if room capacity is not reached
 
     def check_in(self, guest_name):
-        entry_guaranteed = self.current_capacity
+        max_cap = self.capacity
+        entry_guaranteed = len(self.guest_list)
 
-        if entry_guaranteed and self.sufficient_funds:
+        if entry_guaranteed < max_cap and self.sufficient_funds:
             self.add_guest(guest_name.name)
         else:
             return "Sorry, no admittance"

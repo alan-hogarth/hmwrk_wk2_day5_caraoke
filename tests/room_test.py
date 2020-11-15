@@ -12,7 +12,7 @@ class TestRoom(unittest.TestCase):
         self.song1 = Song("Fleetwood Mac", "The Chain")
         self.song2 = Song("Dubliners", "The Rocky Road to Dublin")
         self.song3 = Song("Kate Bush", "Wuthering Heights")
-
+        
         self.guest1 = Guest("Stevie", 39, "The Chain", 100)
         self.guest2 = Guest("Luke", 45, "The Rocky Road to Dublin", 150)
         self.guest3 = Guest("Cathy", 31, "Wuthering Heights", 200)
@@ -44,12 +44,14 @@ class TestRoom(unittest.TestCase):
 
     def test_find_song(self):
         song = "The Chain"
-        self.assertEqual(song, self.song1.title)
+        self.room.find_song(self.room.song_list)
+        self.assertEqual(song, self.guest1.fav_song)
     
     def test_check_in(self):
         self.room.check_in(self.guest1)
         self.assertEqual(["Stevie"], self.room.guest_list)
         
-        
+    
+
 
 
